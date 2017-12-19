@@ -13,6 +13,7 @@
 		6C8F7FB61FE9444A00D471F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C8F7FB51FE9444A00D471F4 /* Assets.xcassets */; };
 		6C8F7FB91FE9444A00D471F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8F7FB71FE9444A00D471F4 /* LaunchScreen.storyboard */; };
 		6C8F7FBC1FE9444A00D471F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8F7FBB1FE9444A00D471F4 /* main.m */; };
+		6C8F7FC81FE949C500D471F4 /* DicStoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8F7FC71FE949C500D471F4 /* DicStoreTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		6C8F7FB81FE9444A00D471F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C8F7FBA1FE9444A00D471F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C8F7FBB1FE9444A00D471F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C8F7FC61FE949C500D471F4 /* DicStoreTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DicStoreTableViewController.h; sourceTree = "<group>"; };
+		6C8F7FC71FE949C500D471F4 /* DicStoreTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DicStoreTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		6C8F7FAB1FE9444A00D471F4 /* dicstore */ = {
 			isa = PBXGroup;
 			children = (
+				6C8F7FC21FE9498000D471F4 /* dicstore */,
 				6C8F7FAC1FE9444A00D471F4 /* AppDelegate.h */,
 				6C8F7FAD1FE9444A00D471F4 /* AppDelegate.m */,
 				6C8F7FAF1FE9444A00D471F4 /* ViewController.h */,
@@ -67,6 +71,15 @@
 				6C8F7FB71FE9444A00D471F4 /* LaunchScreen.storyboard */,
 				6C8F7FBA1FE9444A00D471F4 /* Info.plist */,
 				6C8F7FBB1FE9444A00D471F4 /* main.m */,
+			);
+			path = dicstore;
+			sourceTree = "<group>";
+		};
+		6C8F7FC21FE9498000D471F4 /* dicstore */ = {
+			isa = PBXGroup;
+			children = (
+				6C8F7FC61FE949C500D471F4 /* DicStoreTableViewController.h */,
+				6C8F7FC71FE949C500D471F4 /* DicStoreTableViewController.m */,
 			);
 			path = dicstore;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C8F7FC81FE949C500D471F4 /* DicStoreTableViewController.m in Sources */,
 				6C8F7FB11FE9444A00D471F4 /* ViewController.m in Sources */,
 				6C8F7FBC1FE9444A00D471F4 /* main.m in Sources */,
 				6C8F7FAE1FE9444A00D471F4 /* AppDelegate.m in Sources */,
