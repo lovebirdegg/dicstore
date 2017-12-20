@@ -34,7 +34,7 @@
             //打印playerName
             NSLog(@"obj.playerName = %@", [obj objectForKey:@"name"]);
             //打印objectId,createdAt,updatedAt
-            NSLog(@"obj.objectId = %@", [obj objectId]);
+            NSLog(@"obj.objectId = %@", [obj objectForKey:@"icon"]);
             NSLog(@"obj.createdAt = %@", [obj createdAt]);
             NSLog(@"obj.updatedAt = %@", [obj updatedAt]);
         }
@@ -60,14 +60,15 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"SetingCell";
+    static NSString *CellIdentifier = @"diccell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        CALayer *cellImageLayer = cell.imageView.layer;
+        [cellImageLayer setCornerRadius:9];
+        [cellImageLayer setMasksToBounds:YES];
     }
     BmobObject *obj = [self.dicArray objectAtIndex:[indexPath row]];
     cell.textLabel.text = [obj objectForKey:@"name"];
@@ -78,7 +79,11 @@
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    BmobObject *obj = [self.dicArray objectAtIndex:[indexPath row]];
+    NSString *url =[obj objectForKey:@"url"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

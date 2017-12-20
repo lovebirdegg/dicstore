@@ -34,9 +34,9 @@
     
     DicStoreTableViewController *dic = [[DicStoreTableViewController alloc] init];
     
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:dic];
-    
-    [self.view addSubview:dic.view];
+    [self presentViewController:dic animated:YES completion:^{
+        
+    }];
 }
 
 @end
