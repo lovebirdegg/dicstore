@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CEAECBE06D1928551C8E7E4 /* libPods-dicstore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E429BF4C149E9BAE7DACFF /* libPods-dicstore.a */; };
 		6C8F7FAE1FE9444A00D471F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8F7FAD1FE9444A00D471F4 /* AppDelegate.m */; };
 		6C8F7FB11FE9444A00D471F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8F7FB01FE9444A00D471F4 /* ViewController.m */; };
 		6C8F7FB41FE9444A00D471F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8F7FB21FE9444A00D471F4 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62E429BF4C149E9BAE7DACFF /* libPods-dicstore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dicstore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C8F7FA91FE9444A00D471F4 /* dicstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dicstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C8F7FAC1FE9444A00D471F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C8F7FAD1FE9444A00D471F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +31,8 @@
 		6C8F7FBB1FE9444A00D471F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C8F7FC61FE949C500D471F4 /* DicStoreTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DicStoreTableViewController.h; sourceTree = "<group>"; };
 		6C8F7FC71FE949C500D471F4 /* DicStoreTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DicStoreTableViewController.m; sourceTree = "<group>"; };
+		A759B749F4C60D4CF600038F /* Pods-dicstore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dicstore.release.xcconfig"; path = "Pods/Target Support Files/Pods-dicstore/Pods-dicstore.release.xcconfig"; sourceTree = "<group>"; };
+		F278EF62FB2F67678FC8BD82 /* Pods-dicstore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dicstore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dicstore/Pods-dicstore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +40,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CEAECBE06D1928551C8E7E4 /* libPods-dicstore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69D2C0D339ED338E663CEA70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F278EF62FB2F67678FC8BD82 /* Pods-dicstore.debug.xcconfig */,
+				A759B749F4C60D4CF600038F /* Pods-dicstore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6C8F7FA01FE9444A00D471F4 = {
 			isa = PBXGroup;
 			children = (
 				6C8F7FAB1FE9444A00D471F4 /* dicstore */,
 				6C8F7FAA1FE9444A00D471F4 /* Products */,
+				69D2C0D339ED338E663CEA70 /* Pods */,
+				F9B8F9D6772DF9D8E852AF17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +100,14 @@
 			path = dicstore;
 			sourceTree = "<group>";
 		};
+		F9B8F9D6772DF9D8E852AF17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62E429BF4C149E9BAE7DACFF /* libPods-dicstore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C8F7FBF1FE9444A00D471F4 /* Build configuration list for PBXNativeTarget "dicstore" */;
 			buildPhases = (
+				32AE904F24A185D1ED5E64FC /* [CP] Check Pods Manifest.lock */,
 				6C8F7FA51FE9444A00D471F4 /* Sources */,
 				6C8F7FA61FE9444A00D471F4 /* Frameworks */,
 				6C8F7FA71FE9444A00D471F4 /* Resources */,
+				A17CFE96F412F06DCAF503E5 /* [CP] Embed Pods Frameworks */,
+				EDAE052F26046B802D3DAB08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32AE904F24A185D1ED5E64FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dicstore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17CFE96F412F06DCAF503E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dicstore/Pods-dicstore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDAE052F26046B802D3DAB08 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dicstore/Pods-dicstore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6C8F7FA51FE9444A00D471F4 /* Sources */ = {
@@ -290,6 +368,7 @@
 		};
 		6C8F7FC01FE9444A00D471F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F278EF62FB2F67678FC8BD82 /* Pods-dicstore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +382,7 @@
 		};
 		6C8F7FC11FE9444A00D471F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A759B749F4C60D4CF600038F /* Pods-dicstore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

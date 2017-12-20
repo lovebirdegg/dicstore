@@ -7,15 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "DicStoreTableViewController.h"
 
 @interface ViewController ()
 
 @end
 
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.btn addTarget:self
+                 action:@selector(opentalbeview)
+        forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -25,5 +30,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) opentalbeview{
+    
+    DicStoreTableViewController *dic = [[DicStoreTableViewController alloc] init];
+    
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:dic];
+    
+    [self.view addSubview:dic.view];
+}
 
 @end

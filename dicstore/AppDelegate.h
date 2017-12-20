@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BmobSDK/Bmob.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

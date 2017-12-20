@@ -7,8 +7,12 @@
 //
 
 #import "DicStoreTableViewController.h"
+#import <BmobSDK/Bmob.h>
+
 
 @interface DicStoreTableViewController ()
+
+@property(nonatomic,retain) NSMutableArray *dicArray;
 
 @end
 
@@ -16,14 +20,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
 
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"DicStore"];
+    self.dicArray  = [NSMutableArray array];
+    //查找GameScore表的数据
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        //        self.dicArray = [array copy];
+        for (BmobObject *obj in array) {
+            [self.dicArray addObject:obj];
+            //打印playerName
+            NSLog(@"obj.playerName = %@", [obj objectForKey:@"name"]);
+            //打印objectId,createdAt,updatedAt
+            NSLog(@"obj.objectId = %@", [obj objectId]);
+            NSLog(@"obj.createdAt = %@", [obj createdAt]);
+            NSLog(@"obj.updatedAt = %@", [obj updatedAt]);
+        }
+        [self.tableView reloadData];
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -33,23 +50,34 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.dicArray count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"SetingCell";
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+    BmobObject *obj = [self.dicArray objectAtIndex:[indexPath row]];
+    cell.textLabel.text = [obj objectForKey:@"name"];
+    cell.detailTextLabel.text = [obj objectForKey:@"price"];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[obj objectForKey:@"icon"]]];
+    cell.imageView.image = [UIImage imageWithData:imageData];
+
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
